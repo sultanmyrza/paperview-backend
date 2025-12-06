@@ -1,0 +1,23 @@
+# Set the target Python version for compatibility checks (e.g., syntax not available in older versions)
+target-version = "py313"
+# Exclude common project directories and virtual environments
+exclude = [".venv", ".git", "__pycache__", "migrations"]
+# Set the maximum line length
+# line-length = 88
+
+[lint]
+# Select common rule sets:
+select = [
+    "E",  # E: pycodestyle errors
+    "F",  # F: Pyflakes
+    "I",  # I: Isort for import sorting
+    "B",  # B: Bugbear
+    "UP", # UP: pyupgrade
+]
+# Ignore specific rules if needed
+ignore = ["E501"]
+
+[format]
+# Define formatting preferences
+# quote-style = "single"
+indent-style = "space"
