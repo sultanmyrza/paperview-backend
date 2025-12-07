@@ -11,7 +11,7 @@ def hello():
         {
             "status": "online",
             "service": "paperview-mvp",
-            "message": "Hello from the Cloud!",
+            "message": "Hello from the Cloud! v0.1.0",
         }
     )
 
