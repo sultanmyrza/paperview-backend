@@ -1,18 +1,20 @@
-from flask import Flask
+import os
+
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
 
 @app.route("/")
-def index():
-    return {"message": "Hello, World!"}
+def hello():
+    return jsonify(
+        {
+            "status": "online",
+            "service": "paperview-mvp",
+            "message": "Hello from the Cloud!",
+        }
+    )
 
 
-@app.route("/public")
-def public():
-    return {"data": "anyone can see this"}
-
-
-@app.route("/private")
-def private():
-    return {"data": "only authorized users should see this"}
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
