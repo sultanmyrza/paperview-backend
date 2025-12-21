@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
+import { env } from "../config/env.js";
 
-const connectionString =
-  process.env.MONGODB_URI || "mongodb://db:27017/paperview";
+const connectionString = env.MONGODB_URI;
 
 try {
   await mongoose.connect(connectionString);
