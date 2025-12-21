@@ -1,12 +1,13 @@
 import express from "express";
 import "./loadEnvironment.js"; // Loads .env
+import { env } from "./config/env.js";
 import "./db/connection.js"; // Loads db connection
 import { bullBoardRouter } from "./jobs/bullBoard.js";
 import postRoutes from "./routes/posts.js";
 import testRoutes from "./routes/test.js";
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = env.PORT;
 
 // Middleware
 app.use(express.json());
