@@ -1,14 +1,3 @@
-
-# Node.js & Mongo DB (javascript-node-mongo)
-
-Develop applications in Node.js and Mongo DB. Includes Node.js, eslint, and yarn in a container linked to a Mongo DB.
-
-## Options
-
-| Options Id | Description | Type | Default Value |
-|-----|-----|-----|-----|
-| imageVariant | Node.js version (use -bullseye variants on local arm64/Apple Silicon): | string | 22-bookworm |
-
 This template references an image that was [pre-built](https://containers.dev/implementors/reference/#prebuilding) to automatically include needed devcontainer.json metadata.
 
 * **Image**: mcr.microsoft.com/devcontainers/javascript-node ([source](https://github.com/devcontainers/images/tree/main/src/javascript-node))
@@ -44,8 +33,3 @@ By default, web frameworks and tools often only listen to localhost inside the c
 ```
 
 The `ports` property in `docker-compose.yml` [publishes](https://docs.docker.com/config/containers/container-networking/#published-ports) rather than forwards the port. This will not work in a cloud environment like Codespaces and applications need to listen to `*` or `0.0.0.0` for the application to be accessible externally. Fortunately the `forwardPorts` property does not have this limitation.
-
-
----
-
-_Note: This file was auto-generated from the [devcontainer-template.json](https://github.com/devcontainers/templates/blob/main/src/javascript-node-mongo/devcontainer-template.json).  Add additional notes to a `NOTES.md`._

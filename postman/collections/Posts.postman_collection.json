@@ -1,0 +1,177 @@
+{
+  "info": {
+    "_postman_id": "posts-collection-001",
+    "name": "Posts API",
+    "description": "Collection for testing the Posts API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Posts",
+      "id": "list-posts-001",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/posts",
+          "host": ["{{base_url}}"],
+          "path": ["api", "posts"]
+        },
+        "description": "Get a list of up to 50 posts, sorted by newest first"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Latest Posts",
+      "id": "latest-posts-001",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/posts/latest",
+          "host": ["{{base_url}}"],
+          "path": ["api", "posts", "latest"]
+        },
+        "description": "Get the latest 3 posts with only author, title, tags, and date fields"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single Post",
+      "id": "single-post-001",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/posts/:id",
+          "host": ["{{base_url}}"],
+          "path": ["api", "posts", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "Post ID (MongoDB ObjectId)"
+            }
+          ]
+        },
+        "description": "Get a single post by ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Post",
+      "id": "create-post-001",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"author\": \"John Doe\",\n  \"title\": \"My First Post\",\n  \"body\": \"This is the content of my post.\",\n  \"tags\": [\"tech\", \"programming\", \"javascript\"]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/posts",
+          "host": ["{{base_url}}"],
+          "path": ["api", "posts"]
+        },
+        "description": "Create a new post. Required fields: author, title, body. Optional: tags (array of strings)"
+      },
+      "response": []
+    },
+    {
+      "name": "Add Comment to Post",
+      "id": "add-comment-001",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"author\": \"Jane Smith\",\n  \"body\": \"Great post! Thanks for sharing.\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/posts/comment/:id",
+          "host": ["{{base_url}}"],
+          "path": ["api", "posts", "comment", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "Post ID (MongoDB ObjectId)"
+            }
+          ]
+        },
+        "description": "Add a comment to a post. Required fields: author, body"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Post",
+      "id": "delete-post-001",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/posts/:id",
+          "host": ["{{base_url}}"],
+          "path": ["api", "posts", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "",
+              "description": "Post ID (MongoDB ObjectId)"
+            }
+          ]
+        },
+        "description": "Delete a post by ID"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
+
