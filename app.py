@@ -1,8 +1,12 @@
 import os
 
+from dotenv import load_dotenv
 from flask import Flask, jsonify
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
+
+# This line loads .env into os.environ
+load_dotenv()  # ← looks for .env in current directory
 
 app = Flask(__name__)
 
