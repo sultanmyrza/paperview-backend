@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const connectionString =
-  process.env.MONGODB_URI || "mongodb://localhost:27017/paperview";
+  process.env.MONGODB_URI || "mongodb://db:27017/paperview";
 
 try {
   await mongoose.connect(connectionString);
