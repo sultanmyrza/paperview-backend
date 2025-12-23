@@ -4,7 +4,8 @@
   },
   "entities": {
     "collections": [
-      "postman/collections/Posts.postman_collection.json"
+      "postman/collections/Posts.postman_collection.json",
+      "postman/collections/Service.postman_collection.json"
     ],
     "environments": [],
     "specs": [],

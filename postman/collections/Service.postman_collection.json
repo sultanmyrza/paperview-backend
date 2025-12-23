@@ -1,0 +1,42 @@
+{
+  "info": {
+    "_postman_id": "service-collection-001",
+    "name": "Service API",
+    "description": "Collection for service infrastructure endpoints (health checks, status, etc.)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "id": "health-check-001",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "health"
+          ]
+        },
+        "description": "Check the health status of the service. Returns status, message, uptime, and timestamp."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "id": "b1e49b2f-c528-447a-b591-b1a1410b762f",
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}

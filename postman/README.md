@@ -21,6 +21,7 @@ postman/
 Collections in the `collections/` directory (excluding `gitignore/` folder) are committed to git and shared with the team:
 
 - **Posts.postman_collection.json** - Main API collection for Posts endpoints
+- **Service.postman_collection.json** - Service infrastructure endpoints (health checks, status, etc.)
 
 ### Gitignored Collections
 
@@ -59,7 +60,15 @@ You can override this by:
 
 ## API Endpoints
 
-The Posts API collection includes the following endpoints:
+### Service Endpoints
+
+The Service API collection includes:
+
+- `GET /health` - Health check endpoint (returns status, message, uptime, and timestamp)
+
+### Posts Endpoints
+
+The Posts API collection includes:
 
 - `GET /api/posts` - List up to 50 posts
 - `GET /api/posts/latest` - Get latest 3 posts
